@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Panda Resort - Documentation - CMS for Single Hotel, Resort, Spa</title>
+    <meta name="author" content="Pandao">
+    <meta name="copyright" content="Pandao">
+
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+        
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" href="/common/css/shortcodes.css">
+    <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.11.2/css/all.css">
+    <link rel="stylesheet" href="css/layout.css">
+    
+    <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="/admin/js/jquery-ui.js"></script>
+    <script src="/common/js/modernizr-2.6.1.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+    <link rel="stylesheet" href="/common/js/plugins/magnific-popup/magnific-popup.css">
+    <script src="/common/js/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
+    
+    <script src="/common/js/custom.js"></script>
+    
+    <script>
+        $(function(){
+            $(window).on('resize', function(){
+                var h = $(this).height() - 50;
+                $('.side-nav').css('max-height', h);
+            });
+            $(window).trigger('resize');
+            
+            function showSection(){
+                var hash = location.hash;
+                if(hash == '') window.location.href = '#presentation';
+                $('.section').hide();
+                $(hash).fadeIn();
+                $('.navbar-nav a').removeClass('active');
+                $('.navbar-nav [href="'+hash+'"]').addClass('active');
+            }
+            
+            showSection();
+                
+            $(window).on('hashchange', function(){
+                showSection();
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="wrapper">
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Panda Resort - Documentation</a>
+            </div>
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav side-nav">
+                    <li>
+                        <a href="#presentation"><i class="fab fa-fw fa-dropbox"></i> Presentation</a>
+                    </li>
+                    <li>
+                        <a href="#installation"><i class="fa fa-fw fa-cog"></i> Installation</a>
+                    </li>
+                    <li>
+                        <a href="#configuration"><i class="fa fa-fw fa-cogs"></i> Configuration</a>
+                    </li>
+                    <li>
+                        <a href="#translation"><i class="fa fa-fw fa-comments"></i> Translation</a>
+                    </li>
+                    <li>
+                        <a href="#manage-content"><i class="fa fa-fw fa-list"></i> Manage content</a>
+                    </li>
+                    <li>
+                        <a href="#payment-methods"><i class="fab fa-fw fa-paypal"></i> Payment methods</a>
+                    </li>
+                    <li>
+                        <a href="#ical-sync"><i class="fa fa-fw fa-calendar"></i> iCal Synchronization</a>
+                    </li>
+                    <li>
+                        <a href="#templates"><i class="fa fa-fw fa-file"></i> Templates</a>
+                    </li>
+                    <li>
+                        <a href="#modules"><i class="fa fa-fw fa-th-large"></i> Modules</a>
+                    </li>
+                    <li>
+                        <a href="https://items.pandao.eu/updates?item=2" target="_blank"><i class="fa fa-fw fa-sync"></i> Updates / Changes</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div id="page-wrapper">
+            <div id="presentation" class="section">
+                <div class="page-header" class="section-title">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1><i class="fab fa-fw fa-dropbox"></i> Presentation</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid section-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h1 class="mt0">Panda Resort<br><small>a web software to create and manage websites for SINGLE hotel, resort, spa...</small></h1>
+                            <p>Panda Resort uses <a href="https://codecanyon.net/item/pandao-cms-pro-3/10768918" target="_blank">Pandao CMS</a>, a Content Managment System which contains a simple, ergonomic and complete admin panel which allows you to manage easily the content of your website coupled with an easyly customizable template.<br>
+                            Specific modules: bookings, rooms, packages, rates, currencies, extra services and facilities, activities, coupons, taxes...<br>
+                            Pandao CMS is fully responsive, so use it as well on your smartphone as on your computer.<br>
+                            Based on PDO/MySQL - PHP 4.x/5.x/7.x/8.x - HTML5 - CSS3 - Bootstrap 3.x</p>
+                            <p class="text-muted">Latest update: 05/08/2021 - By: <a href="https://items.pandao.eu/" target="_blank">Pandao</a></p>
+                            <p>
+                                <a href="https://resort.pandao.eu/admin" target="_blank" class="btn btn-default btn-large"><i class="fa fa-fw fa-tasks"></i> Admin panel Demo</a>
+                                <a href="https://resort.pandao.eu" target="_blank" class="btn btn-default btn-large"><i class="fa fa-fw fa-desktop"></i> Front office Demo</a>
+                                <a href="https://codecanyon.net/item/panda-resort-4-cms-for-single-hotel-booking-system/12913332" target="_blank" class="btn btn-primary btn-large"><i class="fa fa-fw fa-download"></i> Purchase &amp; Download</a>
+                            </p>
+                            <p><strong>Thank you for purchasing our CMS. If you have any questions that are beyond the scope of this help file, please contact us. Thanks so much!</strong></p>
+                            <img src="images/doc-header.jpg" alt="Features" class="img-responsive">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="installation" class="section">
+                <div class="page-header" class="section-title">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1><i class="fa fa-fw fa-cog"></i> Installation</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid section-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h2 class="mt0">Installer</h2>
+                            
+                            <p>This product provides an installation wizard:</p>
+                            
+                            <ol>
+                                <li><b>Unzip the archive</b></li>
+                                <li><b>Upload the files</b> on your server</li>
+                                <li><b>Create an empty database</b></li>
+                                <li><b>Go to the URL</b> of your website</li>
+                                <li><b>Fill in the fields</b> with your information and <b>click on Install</b></li>
+                            </ol>
+                            
+                            <h2>Manual installation</h2>
+                            
+                            <p>It happens that the installer failed because of your specific server configuration. Don't worry, you can make a manual installation.<br>
+                            To make a manual installation following these steps:</p>
+
+                            <ol>
+                                <li><b>Unzip the archive</b></li>
+                                <li><b>Upload the files</b> on your server</li>
+                                <li><b>Create an empty database</b></li>
+                                <li><b>Rename</b> /common/<b>config-tmp.php</b> as /common/<b>config.php</b> and <b>edit</b> the content</li>
+                                <li>
+                                    <b>Rename</b> /<b>htaccess.txt</b> as /<b>.htaccess</b> and <b>edit</b> the line 67:<br>
+                                    >> Replace {DOCBASE} with / (unless your website is in a subdirectory, for ex: /dev/mywebsite/)
+                                </li>
+                                <li>
+                                    <b>Edit</b> the file /common/<b>db.sql</b> and replace the values specified at the beginning of the file ("search and replace" function of your text editor is usefull) <u>in the entire file</u>:
+                                    <ul>
+                                        <li><b>MY_DATABASE</b>: database name</li>
+                                        <li><b>MY_DB_USER</b>: username (if required by your host)</li>
+                                        <li><b>MY_DB_PASS</b>: password (if required by your host)</li>
+                                        <li><b>USER_EMAIL</b>: email of the administrator</li>
+                                        <li><b>USER_LOGIN</b>: username of the administrator</li>
+                                        <li><b>USER_PASS</b>: password of the administrator</li>
+                                        <li><b>INSTALL_DATE</b>: current date (timestamp >> <a href="http://www.unixtimestamp.com/" target="_blank">generate a timestamp</a>)</li>
+                                    </ul>
+                                </li>
+                                <li><b>Execute this script</b> in your SQL manager (like phpMyAdmin for example)</li>
+                            </ol>
+                            
+                            <div class="alert alert-info">If you rename the /admin folder manually (not from the admin panel settings), you must rename it also in the file /.htaccess and in the file /common/config.php (ADMIN_FOLDER_NAME).</div>
+                            
+                            <p>According to your host, you may need to grant the rights 777 (r+w+x) to the following files:</p>
+                            
+                            <ul>
+                                <li><strong>/common/config.php</strong>&nbsp;&nbsp; &nbsp;website settings editable from the admin panel</li>
+                                <li><strong>/medias/</strong>&nbsp;&nbsp; &nbsp;the files and pictures of dynamic elements like articles, slideshow...</li>
+                                <li><strong>/.htaccess</strong>&nbsp;&nbsp; &nbsp;server configuration rules, basedir and url rewriting</li>
+                            </ul>
+                            
+                            <div class="alert alert-info">To set 777 rights on "/medias/" folder including all the files within all the subfolders, use the unix command from the /medias/ directory: chmod -R 777 ./</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="configuration" class="section">
+                <div class="page-header" class="section-title">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1><i class="fa fa-fw fa-cogs"></i> Configuration</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid section-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            
+                            <h2>Edit settings</h2>
+                            
+                            <p>First of all, after the installation, <b>add your settings</b> (database connection, contact information, website name...) in the settings section of the admin panel.<br>
+                            You can also edit the settings manually directly from the file /common/config.php</p>
+                            
+                            <p>To access to the admin panel : http://www.mywebsite.com/<b>admin</b></p>
+                            
+                            <h2>Settings details (/common/config.php)</h2>
+                            
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Expected type / values</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>SITE_TITLE</td>
+                                            <td>text</td>
+                                            <td>Title of the website</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TIME_ZONE</td>
+                                            <td>text</td>
+                                            <td>"Europe/London"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DATE_FORMAT</td>
+                                            <td>text (<a href="http://php.net/manual/fr/function.strftime.php" target="_blank">allowable formats</a>)</td>
+                                            <td>e.g. %F</td>
+                                        </tr>
+                                        <tr>
+                                            <td>LANG_ENABLED</td>
+                                            <td>1 or 0</td>
+                                            <td>Enables or disables the foreign languages (multilingual or not)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ADMIN_LANG_FILE</td>
+                                            <td>en.ini</td>
+                                            <td>Translation file name from /admin/includes/langs/</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ENABLE_COOKIES_NOTICE</td>
+                                            <td>1 or 0</td>
+                                            <td>Enables or disables the cookies notices</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MAINTENANCE_MODE</td>
+                                            <td>1 or 0</td>
+                                            <td>Enables or disables the maintenance mode</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MAINTENANCE_MSG</td>
+                                            <td>text</td>
+                                            <td>HTML content of the maintenance page</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TEMPLATE</td>
+                                            <td>text</td>
+                                            <td>Name of the template in use (name of the folder)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>OWNER</td>
+                                            <td>text</td>
+                                            <td>Contact name</td>
+                                        </tr>
+                                        <tr>
+                                            <td>EMAIL</td>
+                                            <td>text</td>
+                                            <td>Contact email</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ADDRESS</td>
+                                            <td>text</td>
+                                            <td>Contact address</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PHONE</td>
+                                            <td>text</td>
+                                            <td>Contact phone</td>
+                                        </tr>
+                                        <tr>
+                                            <td>MOBILE</td>
+                                            <td>text</td>
+                                            <td>Contact mobile</td>
+                                        </tr>
+                                        <tr>
+                                            <td>FAX</td>
+                                            <td>text</td>
+                                            <td>Contact fax</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DB_NAME</td>
+                                            <td>text</td>
+                                            <td>Database name</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DB_HOST</td>
+                                            <td>text</td>
+                                            <td>Database host (localost)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DB_PORT</td>
+                                            <td>integer</td>
+                                            <td>Database port (3306)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DB_USER</td>
+                                            <td>text</td>
+                                            <td>Database user</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DB_PASS</td>
+                                            <td>text</td>
+                                            <td>Database password</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SENDER_EMAIL</td>
+                                            <td>text</td>
+                                            <td>Email of the sender</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SENDER_NAME</td>
+                                            <td>text</td>
+                                            <td>Name of the sender</td>
+                                        </tr>
+                                        <tr>
+                                            <td>USE_SMTP</td>
+                                            <td>1 or 0</td>
+                                            <td>Use SMTP to send emails</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SMTP_SECURITY</td>
+                                            <td>"" | "ssl" | "tls"</td>
+                                            <td>Security of the SMTP connection</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SMTP_AUTH</td>
+                                            <td>1 or 0</td>
+                                            <td>Enable SMTP autentication</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SMTP_HOST</td>
+                                            <td>text</td>
+                                            <td>Name of the SMTP server</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SMTP_USER</td>
+                                            <td>text</td>
+                                            <td>Username</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SMTP_PASS</td>
+                                            <td>text</td>
+                                            <td>Password</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SMTP_PORT</td>
+                                            <td>integer</td>
+                                            <td>Usually 25, 465 (SSL) or 587 (TLS)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>GMAPS_API_KEY</td>
+                                            <td>text</td>
+                                            <td>Google Maps API key (required for domains not active prior to June 22nd, 2016)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ANALYTICS_CODE</td>
+                                            <td>text</td>
+                                            <td>Google Analytics code (without &lt;script&gt; tags)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ADMIN_FOLDER</td>
+                                            <td>text</td>
+                                            <td>Admin folder name ("admin")</td>
+                                        </tr>
+                                        <tr>
+                                            <td>AUTOGEOLOCATE</td>
+                                            <td>1 or 0</td>
+                                            <td>Change the currency according to the country (https required)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PAYMENT_TYPE</td>
+                                            <td>comma separated values: cards,paypal,check,arrival</td>
+                                            <td>Available payment methods</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PAYPAL_EMAIL</td>
+                                            <td>text</td>
+                                            <td>Paypal account email</td>
+                                        </tr>
+                                        <tr>
+                                            <td>VENDOR_ID</td>
+                                            <td>text</td>
+                                            <td>2Checkout.com account number</td>
+                                        </tr>
+                                        <tr>
+                                            <td>SECRET_WORD</td>
+                                            <td>text</td>
+                                            <td>2Checkout.com secret word</td>
+                                        </tr>
+                                        <tr>
+                                            <td>PAYMENT_TEST_MODE</td>
+                                            <td>1 or 0</td>
+                                            <td>Enables or disables the test mode</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ENABLE_DOWN_PAYMENT</td>
+                                            <td>1 or 0</td>
+                                            <td>Enables or disables the down payment</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DOWN_PAYMENT_RATE</td>
+                                            <td>integer</td>
+                                            <td>Down payment rate (%)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ENABLE_TOURIST_TAX</td>
+                                            <td>1 or 0</td>
+                                            <td>Enables or disables the tourist taxt</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ENABLE_TOURIST_TAX</td>
+                                            <td>1 or 0</td>
+                                            <td>Enables or disables the tourist taxt</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TOURIST_TAX</td>
+                                            <td>decimal</td>
+                                            <td>Tousist tax amount or rate (%)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>TOURIST_TAX_TYPE</td>
+                                            <td>"fixed" or "rate"</td>
+                                            <td>Tourist tax type</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ALLOW_COMMENTS</td>
+                                            <td>1 or 0</td>
+                                            <td>Allows or disallows comments on rooms</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ALLOW_RATINGS</td>
+                                            <td>1 or 0</td>
+                                            <td>Allows or disallows rating (0-5) on rooms</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ALLOW_RATINGS</td>
+                                            <td>1 or 0</td>
+                                            <td>Allows (if comments enabled) or disallows ratings (0-5) on room</td>
+                                        </tr>
+                                        <tr>
+                                            <td>ENABLE_BOOKING_REQUESTS</td>
+                                            <td>1 or 0</td>
+                                            <td>Enables or disables the booking requests if no availability</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="modules" class="section">
+                <div class="page-header" class="section-title">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1><i class="fa fa-fw fa-th-large"></i> Modules</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid section-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p>The package contains basic modules like the articles, the pages, the comments, the slideshow, etc.</p>
+                            <p>
+                                The first part of a module section lists recorded elements for this module, the second part is a form to add or modify an element.<br>
+                                In the settings section, you can manage the parameters essential to the smooth running of the web site and its manager.
+                            </p>
+                            <h2>Add / configure your own modules</h2>
+                            <p>You can add and personalize your own modules:</p>
+                            <ol>
+                                <li>Duplicate the folder /admin/modules/.TABLE_NAME_WITHOUT_PREFIX/ and its content</li>
+                                <li>Rename it with the same name of the table in the database without the prefix "pm_" (module name = table name without prefix = folder name)</li>
+                                <li>Edit the file db.sql in the module folder and execute this script in your phpMyAdmin</li>
+                                <li>Edit the file config.xml in the module folder</li>
+                            </ol>
+                            <h3>Database: db.sql</h3>
+                            <pre class="prettyprint lang-html linenums">
+-- ================ CREATION OF THE TABLE pm_article =============
+
+CREATE TABLE IF NOT EXISTS pm_article(
+    id int NOT NULL AUTO_INCREMENT,
+    lang int NOT NULL,
+    title varchar(250),
+    subtitle varchar(250),
+    alias varchar(100),
+    text longtext,
+    url varchar(250),
+    tags varchar(250),
+    id_page int,
+    id_user int,
+    home int DEFAULT 0,
+    checked int DEFAULT 0,
+    rank int DEFAULT 0,
+    add_date int,
+    edit_date int,
+    publish_date int,
+    unpublish_date int,
+    comment int DEFAULT 0,
+    PRIMARY KEY(id, lang)
+) ENGINE=INNODB DEFAULT CHARSET=utf8;
+
+ALTER TABLE pm_article ADD CONSTRAINT article_lang_fkey FOREIGN KEY (lang) REFERENCES pm_lang(id) ON DELETE CASCADE ON UPDATE NO ACTION;
+ALTER TABLE pm_article ADD CONSTRAINT article_page_fkey FOREIGN KEY (id_page, lang) REFERENCES pm_page(id, lang) ON DELETE CASCADE ON UPDATE NO ACTION;</pre>
+        
+                            <p>Usefull and reserved columns names for the tables</p>
+                            <ul>
+                                <li><strong>id</strong> : required</li>
+                                <li><strong>lang</strong> : required if &quot;multi&quot; attribute has the value 1 in config.xml (for multilingual modules)</li>
+                                <li><strong>rank</strong> : required if &quot;ranking&quot; attribute has the value 1 in config.xml (if the elements can be sorted with drag&#39;n&#39;drop on the list)</li>
+                                <li><strong>home</strong> : required if &quot;home&quot; attribute has the value 1 in config.xml (if the element can appear on homepage)</li>
+                                <li><strong>checked</strong> : required if &quot;validation&quot; attribute has the value 1 in config.xml (if the element can be published or not)</li>
+                                <li><strong>add_date</strong> / <strong>edit_date</strong> : required if &quot;date&quot; attribute has the value 1 in config.xml (if the element needs a add date and an edit date)</li>
+                                <li><strong>publish_date</strong> / <strong>unpublish_date</strong> : required if &quot;release&quot; attribute has the value 1 in config.xml (if the release of the element needs to be sheduled)</li>
+                            </ul>
+                            <p>Conserve the &quot;TABLE_NAME_file&quot; if the element neads medias (pdf, pictures, videos...)</p>
+                            
+                            <h3>Configuration: config.xml</h3>
+                            
+                            <p>The file config.xml define the module settings and the columns displayed in <strong>list.php</strong> and <strong>form.php</strong> (/admin/module/default/). config.xsd check the syntax of this document</p>
+
+                            <pre class="prettyprint lang-html linenums">
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;module title=&quot;Articles&quot; name=&quot;article&quot; multi=&quot;1&quot; library=&quot;1&quot; dashboard=&quot;1&quot; icon=&quot;thumb-tack&quot; ranking=&quot;1&quot; home=&quot;1&quot; validation=&quot;1&quot; dates=&quot;1&quot; release=&quot;1&quot; index=&quot;1&quot;&gt;
+    &lt;!-- resizing
+    [0] 1 single image
+    [1] 1x big, 1x medium, 1x small --&gt;
+    &lt;medias max=&quot;30&quot; resizing=&quot;1&quot;&gt;
+        &lt;big maxw=&quot;1920&quot; maxh=&quot;1440&quot;/&gt;
+        &lt;medium maxw=&quot;600&quot; maxh=&quot;600&quot;/&gt;
+        &lt;small maxw=&quot;400&quot; maxh=&quot;400&quot;/&gt;
+    &lt;/medias&gt;
+    &lt;list order=&quot;rank&quot;&gt;
+        &lt;filter label=&quot;Page&quot; name=&quot;id_page&quot; table=&quot;pm_page&quot; fieldlabel=&quot;name&quot; fieldvalue=&quot;id&quot; order=&quot;name&quot;/&gt;
+        &lt;col label=&quot;Title&quot; name=&quot;title&quot; type=&quot;none&quot;/&gt;
+        &lt;col label=&quot;Page&quot; name=&quot;id_page&quot; table=&quot;pm_page&quot; fieldvalue=&quot;name&quot; fieldref=&quot;id&quot;/&gt;
+    &lt;/list&gt;
+    &lt;form&gt;
+        &lt;field multi=&quot;1&quot; label=&quot;Title&quot; name=&quot;title&quot; type=&quot;text&quot; required=&quot;1&quot; unique=&quot;0&quot; validation=&quot;none&quot;/&gt;
+        &lt;field multi=&quot;1&quot; label=&quot;Subtitle&quot; name=&quot;subtitle&quot; type=&quot;text&quot; required=&quot;0&quot; unique=&quot;0&quot; validation=&quot;none&quot;/&gt;
+        &lt;field multi=&quot;1&quot; label=&quot;Alias&quot; name=&quot;alias&quot; type=&quot;text&quot; required=&quot;1&quot; unique=&quot;1&quot; validation=&quot;none&quot; comment=&quot;Article URL&quot;/&gt;
+        &lt;field multi=&quot;1&quot; label=&quot;Text&quot; name=&quot;text&quot; type=&quot;textarea&quot; editor=&quot;1&quot; required=&quot;0&quot; unique=&quot;0&quot; validation=&quot;none&quot;/&gt;
+        &lt;field multi=&quot;1&quot; label=&quot;URL&quot; name=&quot;url&quot; type=&quot;text&quot; required=&quot;0&quot; unique=&quot;0&quot; validation=&quot;none&quot;/&gt;
+        &lt;field multi=&quot;0&quot; label=&quot;Page&quot; name=&quot;id_page&quot; type=&quot;select&quot; required=&quot;1&quot; unique=&quot;0&quot; validation=&quot;none&quot;&gt;
+            &lt;options table=&quot;pm_page&quot; fieldlabel=&quot;name&quot; fieldvalue=&quot;id&quot; order=&quot;name&quot;/&gt;
+        &lt;/field&gt;
+        &lt;field multi=&quot;0&quot; label=&quot;Tags&quot; name=&quot;tags&quot; type=&quot;multiselect&quot; required=&quot;0&quot; unique=&quot;0&quot; validation=&quot;none&quot;&gt;
+            &lt;options table=&quot;pm_tag&quot; fieldlabel=&quot;value&quot; fieldvalue=&quot;id&quot; order=&quot;value&quot;/&gt;
+        &lt;/field&gt;
+        &lt;field multi=&quot;0&quot; label=&quot;Allow comment ?&quot; name=&quot;comment&quot; type=&quot;radio&quot; required=&quot;1&quot; unique=&quot;0&quot; validation=&quot;none&quot; roles=&quot;administrator&quot;&gt;
+            &lt;options&gt;
+                &lt;option value=&quot;1&quot;&gt;Yes&lt;/option&gt;
+                &lt;option value=&quot;0&quot;&gt;No&lt;/option&gt;
+            &lt;/options&gt;
+        &lt;/field&gt;
+        &lt;field multi=&quot;0&quot; label=&quot;User&quot; name=&quot;id_user&quot; type=&quot;select&quot; required=&quot;1&quot; unique=&quot;0&quot; validation=&quot;none&quot; roles=&quot;administrator&quot;&gt;
+            &lt;options table=&quot;pm_user&quot; fieldlabel=&quot;login&quot; fieldvalue=&quot;id&quot; order=&quot;login&quot;/&gt;
+        &lt;/field&gt;
+    &lt;/form&gt;
+    &lt;roles&gt;
+        &lt;user type=&quot;administrator&quot; permissions=&quot;all&quot;/&gt;
+        &lt;user type=&quot;manager&quot; permissions=&quot;all&quot;/&gt;
+        &lt;user type=&quot;editor&quot; permissions=&quot;add,edit,upload&quot;/&gt;
+    &lt;/roles&gt;
+&lt;/module&gt;</pre>
+
+                            <h4>XML structure</h4>
+                            
+                            <p>&lt;module&gt; has the following attributes</p>
+                            
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Expected type / values</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>title</td>
+                                        <td>text</td>
+                                        <td>title of the module</td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>text</td>
+                                        <td>column name in the table</td>
+                                    </tr>
+                                    <tr>
+                                        <td>multi</td>
+                                        <td>1 or 0</td>
+                                        <td>enables or disables the foreign languages (multilingual or not)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>library</td>
+                                        <td>1 or 0</td>
+                                        <td>the medias of the module appear or not in the library of medias on the form page</td>
+                                    </tr>
+                                    <tr>
+                                        <td>dashboard</td>
+                                        <td>1 or 0</td>
+                                        <td>shows or hides a focus box on the manager homepage</td>
+                                    </tr>
+                                    <tr>
+                                        <td>icon</td>
+                                        <td>text</td>
+                                        <td>the icon associated with the module (it&#39;s the suffix of &quot;Font Awesome&quot;: fa fa-xxxx)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>ranking</td>
+                                        <td>1 or 0</td>
+                                        <td>enables or disables the ranking of the elements in the list</td>
+                                    </tr>
+                                    <tr>
+                                        <td>home</td>
+                                        <td>1 or 0</td>
+                                        <td>possible or not to show/hide an element on the homepage</td>
+                                    </tr>
+                                    <tr>
+                                        <td>validation</td>
+                                        <td>1 or 0</td>
+                                        <td>possible or not to publish/unpublish an element</td>
+                                    </tr>
+                                    <tr>
+                                        <td>dates</td>
+                                        <td>1 or 0</td>
+                                        <td>enables or disables the add date and the edit date</td>
+                                    </tr>
+                                    <tr>
+                                        <td>release</td>
+                                        <td>1 or 0</td>
+                                        <td>possible or not to shedule the release of an element</td>
+                                    </tr>
+                                    <tr>
+                                        <td>index</td>
+                                        <td>integer > 0</td>
+                                        <td>rank of the module in the main menu</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>&lt;module&gt; contains 1 element &lt;media&gt;, 1 element &lt;list&gt;, 1 element &lt;form&gt; and 1 element &lt;roles&gt;</p>
+                            <p>&lt;medias&gt; has the following attributes</p>
+                            <table class="table table-bordered table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Expected type / values</th>
+                                        <th>Description</th>
+                                    </tr>
+                                    <tr>
+                                        <td>max</td>
+                                        <td>integer</td>
+                                        <td>maximum number of medias</td>
+                                    </tr>
+                                    <tr>
+                                        <td>resizing</td>
+                                        <td>1 or 0</td>
+                                        <td>resizing type for the picture: &quot;0&quot; = 1 single image, &quot;1&quot; = 1x big, 1x medium and 1x small</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>&lt;medias&gt; contains 1x &lt;big&gt;, 1x &lt;medium&gt; and 1x &lt;small&gt;</p>
+                            <p>&lt;big&gt;, &lt;medium&gt; and &lt;small&gt; has the following attributes</p>
+                            <table class="table table-bordered table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Expected type / values</th>
+                                        <th>Description</th>
+                                    </tr>
+                                    <tr>
+                                        <td>maxw</td>
+                                        <td>integer</td>
+                                        <td>maximum width of the pictures in pixels</td>
+                                    </tr>
+                                    <tr>
+                                        <td>maxh</td>
+                                        <td>integer</td>
+                                        <td>maximum height of the pictures in pixels</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>&lt;list&gt; has the following attributes</p>
+                            <table class="table table-bordered table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Expected type / values</th>
+                                        <th>Description</th>
+                                    </tr>
+                                    <tr>
+                                        <td>order</td>
+                                        <td>text</td>
+                                        <td>column name in the table followed by DESC or ASC if necessary</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>&lt;list&gt; contains 1 or more elements &lt;col&gt;</p>
+                            <p>&lt;col&gt; has the following attributes</p>
+                            <table class="table table-bordered table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Expected type / values</th>
+                                        <th>Description</th>
+                                    </tr>
+                                    <tr>
+                                        <td>label</td>
+                                        <td>text</td>
+                                        <td>title in the header cel</td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>text</td>
+                                        <td>column name in the table</td>
+                                    </tr>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>&quot;date&quot; | &quot;price&quot; | &quot;none&quot; (for text)</td>
+                                        <td>display format (price: currency in fn_form.php)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>table</td>
+                                        <td>text</td>
+                                        <td>table referencing the values (optional)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>fieldref</td>
+                                        <td>text</td>
+                                        <td>column name referencing the values of this table (visible, optional)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>fieldvalue</td>
+                                        <td>text</td>
+                                        <td>column name containing the value referenced by &quot;fieldref&quot; (hidden, optional)</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>&lt;form&gt; contains 1 or more elements &lt;field&gt;</p>
+                            <p>&lt;field&gt; has the following attributes</p>
+                            <table class="table table-bordered table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Expected type / values</th>
+                                        <th>Description</th>
+                                    </tr>
+                                    <tr>
+                                        <td>multi</td>
+                                        <td>1 or 0</td>
+                                        <td>display for all languages or not</td>
+                                    </tr>
+                                    <tr>
+                                        <td>label</td>
+                                        <td>text</td>
+                                        <td>label of the field (optional)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>&quot;radio&quot; | &quot;text&quot; | &quot;textarea&quot; | &quot;select&quot; | &quot;checkbox&quot; | &quot;date&quot; | &quot;current_date&quot; | &quot;separator&quot;</td>
+                                        <td>field type</td>
+                                    </tr>
+                                    <tr>
+                                        <td>editor</td>
+                                        <td>1 or 0</td>
+                                        <td>CKEditor or basic input</td>
+                                    </tr>
+                                    <tr>
+                                        <td>name</td>
+                                        <td>text</td>
+                                        <td>column name in the table or other for a &quot;separator&quot; field, it must be unique for a module</td>
+                                    </tr>
+                                    <tr>
+                                        <td>required</td>
+                                        <td>1 or 0</td>
+                                        <td>required value or not</td>
+                                    </tr>
+                                    <tr>
+                                        <td>validation</td>
+                                        <td>&quot;mail&quot; | &quot;numeric&quot; | &quot;none&quot;</td>
+                                        <td>validation type</td>
+                                    </tr>
+                                    <tr>
+                                        <td>unique</td>
+                                        <td>1 or 0</td>
+                                        <td>unique value in the table or not (e-mail for exmaple)</td>
+                                    </tr>
+                                    <tr>
+                                        <td>comment</td>
+                                        <td>text</td>
+                                        <td>instruction about this field</td>
+                                    </tr>
+                                    <tr>
+                                        <td>roles</td>
+                                        <td>comma separated values: administrator, manager, editor</td>
+                                        <td>user types allowed to edit this field</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p>&lt;roles&gt; contains 3 elements &lt;user&gt; (1 for each type of user)</p>
+                            <p>&lt;user&gt; has the following attributes</p>
+                            <table class="table table-bordered table-striped">
+                                <tbody>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Expected type / values</th>
+                                        <th>Description</th>
+                                    </tr>
+                                    <tr>
+                                        <td>type</td>
+                                        <td>&quot;administrator&quot; | &quot;manager&quot; | &quot;editor&quot;</td>
+                                        <td>type of user</td>
+                                    </tr>
+                                    <tr>
+                                        <td>permissions</td>
+                                        <td>comma separated values: all, add, edit, delete, publish, upload, no_access</td>
+                                        <td>permissions for this user</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <h4>More about the field types</h4>
+                            
+                            <ul>
+                                <li><strong>radio</strong> : radio buttons - the options are defined into the &lt;options&gt; tag</li>
+                                <li><strong>select</strong> : drop-down list - the options are defined into the &lt;options&gt; tag</li>
+                                <li><strong>multiselect</strong> : multiple-choice list - the options are defined into the &lt;options&gt; tag</li>
+                                <li><strong>checkbox</strong> : as the name suggests - the options are defined into the &lt;options&gt; tag</li>
+                                <li><strong>text</strong> : text field</li>
+                                <li><strong>textarea</strong> : as the name suggests</li>
+                                <li><strong>date</strong> : automatic drop-down lists with year, month, day (converted in timestamp)</li>
+                                <li><strong>datetime</strong> : automatic drop-down lists with year, month, day, hours, minutes, seconds (converted in timestamp)</li>
+                                <li><strong>current_date</strong> : hidden field with the current date (timestamp)</li>
+                                <li><strong>separator</strong> : separator between different parts of the form</li>
+                            </ul>
+                            
+                            <h4>More about the &lt;options&gt; tag</h4>
+                           
+                            <p>&lt;field&gt; can contain a &lt;options&gt; tag which define the options of the &quot;checkbox&quot;, &quot;radio&quot; and &quot;select&quot; fields</p>
+                            <ol>
+                                <li>
+                                    the options are &quot;continuous&quot; values<br>
+                                    &lt;options&gt; tag must contain 1 &lt;min&gt; and 1 &lt;max&gt; tags
+                                </li>
+                                <li>
+                                    the options are &quot;one-off&quot;<br>
+                                    L&#39;&eacute;l&eacute;ment &lt;options&gt; devra comporter un ou plusieurs &eacute;l&eacute;ments &lt;option&gt; contenant le libell&eacute; de l&#39;item.<br>
+                                    each &lt;option&gt; tag must contain an attribute &quot;value&quot; like the html tag.
+                                </li>
+                                <li>
+                                    the options are stored in a specific table of the database<br>
+                                    &lt;options&gt; must contain the following attributes
+                                    <ul>
+                                        <li><strong>table</strong> : table name containing the values</li>
+                                        <li><strong>fieldlabel</strong> : column name of the item label (visible)</li>
+                                        <li><strong>fieldvalue</strong> : column name of the item value (hidden)</li>
+                                    </ul>
+                                </li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="payment-methods" class="section">
+                <div class="page-header" class="section-title">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1><i class="fab fa-fw fa-paypal"></i> Payment methods</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid section-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h2>PayPal: express checkout</h2>
+                            <ol>
+                                <li><strong>No Paypal account</strong>? Create one <a href="https://registration.paypal.com/" target="_blank">here</a>.</li>
+                                <li>If you need to make tests:
+                                    <ol>
+                                        <li><strong>Create 2 sandbox test accounts</strong> (1 business and 1 personal) via <a href="https://developer.paypal.com/webapps/developer/docs/classic/lifecycle/sb_create-accounts/" target="_blank">PayPal Developer</a>.
+                                        <br>For example <i>pandao.buyer@gmail.com</i> and <i>pandao.merchant@gmail.com</i>.</li>
+                                        <li><strong>Enable the payment test mode</strong> in the Pandao admin panel:
+                                        <br>Admin &gt; Settings &gt; Booking &gt; "Enable payment test mode" =&gt; Yes.</li>
+                                        <li><strong>Insert your PayPal test email (business)</strong> in the Pandao admin panel:
+                                        <br>Admin &gt; Settings &gt; Booking &gt; "PayPal email".</li>
+                                        <li><strong>Test your application</strong> by making a booking with the PayPal test account (personal).</li>
+                                    </ol>
+                                </li>
+                                <li><strong>Insert your PayPal email (live account)</strong> in the Pandao admin panel:
+                                <br>Admin &gt; Settings &gt; Booking &gt; "PayPal email".</li>
+                                <li><strong>Enable live payment</strong> in your PayPal account: <a href="https://developer.paypal.com/docs/classic/lifecycle/goingLive/" target="_blank">https://developer.paypal.com/docs/classic/lifecycle/goingLive/</a>.</li>
+                                <li><strong>Disable the payment test mode</strong> in the Pandao admin panel:
+                                <br>Admin &gt; Settings &gt; Booking &gt; "Enable payment test mode" =&gt; No.</li>
+                                <li>It's over!</li>
+                            </ol>
+                            
+                            <h2>2Checkout.com: credit cards</h2>
+                            
+                            <ol>
+                                <li>If you need to make tests:
+                                    <ol>
+                                        <li><strong>Create a sandbox account</strong> <a href="http://sandbox.2checkout.com/sandbox/signup" target="_blank">here</a>.</li>
+                                        <li><a href="https://sandbox.2checkout.com/sandbox" target="_blank">Log in to your sandbox account</a>.</li>
+                                        <li>Get your <a href="http://help.2checkout.com/articles/FAQ/Where-is-my-Seller-ID" target="_blank">test account number</a>.</li>
+                                        <li>Get your <a href="http://help.2checkout.com/articles/FAQ/Where-do-I-set-up-the-Secret-Word/" target="_blank">test account secret word</a>.</li>
+                                        <li><strong>Define the return URL</strong> called by 2Checkout.com when a booking is performed <a href="https://sandbox.2checkout.com/sandbox/notifications/" target="_blank">here</a>:
+                                        <br>&gt; Order created &gt; Enable and past URL &gt; Save Settings.<br>
+                                        This URL must be: http://REPLACE_WITH_YOUR_SITE_URL/includes/payments/2checkout_notify.php</li>
+                                        <li>Set the setting <strong>Direct Return</strong> to "Direct Return (Our URL)" in your <a href="https://sandbox.2checkout.com/sandbox/acct/detail_company_info" target="_blank">Sandbox account</a>.</li>
+                                        <li><strong>Enable the payment test mode</strong> in the admin panel:
+                                        <br>Admin &gt; Settings &gt; Booking &gt; "Enable payment test mode" =&gt; Yes.</li>
+                                        <li><strong>Insert your sandbox account number</strong> in the Pandao admin panel:
+                                        <br>Admin &gt; Settings &gt; Booking &gt; "2Checkout vendor ID".</li>
+                                        <li><strong>Insert your sandbox secret word</strong> in the Pandao admin panel:
+                                        <br>Admin &gt; Settings &gt; Booking &gt; "2Checkout secret word".</li>
+                                        <li><strong>Test your application</strong> by making a booking.</li>
+                                    </ol>
+                                </li>
+                                <li><strong>No 2Checkout account</strong>? Create one <a href="https://www.2checkout.com/signup" target="_blank">here</a>.</li>
+                                <li><a href="https://www.2checkout.com/login" target="_blank">Log in to your live account</a>.</li>
+                                <li>Get your <a href="http://help.2checkout.com/articles/FAQ/Where-is-my-Seller-ID" target="_blank">live account number</a>.</li>
+                                <li>Get your <a href="http://help.2checkout.com/articles/FAQ/Where-do-I-set-up-the-Secret-Word/" target="_blank">live account secret word</a>.</li>
+                                <li><strong>Define the return URL</strong> called by 2Checkout.com when a booking is performed <a href="https://www.2checkout.com/va/notifications/" target="_blank">here</a>:
+                                <br>&gt; Order created &gt; Enable and past URL &gt; Save Settings.<br>
+                                This URL must be: http://REPLACE_WITH_YOUR_SITE_URL/includes/payments/2checkout_notify.php</li>
+                                <li>Set the setting <strong>Direct Return</strong> to "Direct Return (Our URL)" in your <a href="https://www.2checkout.com/va/acct/detail_company_info" target="_blank">Live account</a>.</li>
+                                <li><strong>Insert your live account number</strong> in the Pandao admin panel:
+                                <br>Admin &gt; Settings &gt; Booking &gt; "2Checkout vendor ID".</li>
+                                <li><strong>Insert your live secret word</strong> in the Pandao admin panel:
+                                <br>Admin &gt; Settings &gt; Booking &gt; "2Checkout secret word".</li>
+                                <li><strong>Disable the payment test mode</strong> in the admin panel:
+                                <br>Admin &gt; Settings &gt; Booking &gt; "Enable payment test mode" =&gt; No.</li>
+                                <li>It's over!</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="ical-sync" class="section">
+                <div class="page-header" class="section-title">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1><i class="fa fa-fw fa-calendar"></i> iCal Synchronization</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid section-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+							<p>You can synchronize your website with all OTA like Booking.com, Airbnb, and so on. Don't waste time and keep your calendars up to date with this feature.</p>
+                            <h2>Enable iCal</h2>
+                            <ol>
+								<li>
+									<strong>Enable the iCal feature</strong> in the Pandao admin panel:<br>
+									Admin > Settings > Booking > "Enable iCal synchronization".
+								</li>
+								<li>
+									Under this field, you can:
+									<ul>
+										<li><strong>Enable the automatic execution</strong> of the synchronization.</li>
+										<li>Define the automatic synchronization <strong>interval</strong> (daily or hourly).</li>
+										<li>Define the automatic synchronization <strong>clock</strong> if the interval is set on "daily".</li>
+									</ul>
+								</li>
+                            </ol>
+                            <h2>Import calendars</h2>
+                            <p>Then you need to <strong>bind the external calendars from the OTA</strong> (Booking.com, Airbnb...) to each room in your Pandao admin panel.</p>
+                            <ol>
+								<li><strong>Add external calendars</strong> in Admin > Modules > Rooms > Edit <i class="fa fa-edit"></i>  > External iCal calendars > <i class="fa fa-plus"></i> New entry:</li>
+								<li><strong>Give a title to your calendar </strong>(for example the name of the OTA: Booking.com)</li>
+								<li><strong>Fill the URL</strong> that you get from the OTA website and ocrresponding to this accomodation</li>
+								<li><strong>Save</strong> when all calendars are added.</li>
+                            </ol>
+                            <p>You can always <strong>execute the synchronization manualy</strong> in the listing by clicking on the button <strong>"Synchronize all calendars"</strong> on top.<br>
+                            If you chose the automatic method, the external bookings will be imported automatically daily or hourly, only if a client visits your website to prevent unnecessary server requests.</p>
+							<h2>Export calendars</h2>
+							<p>For each room, you can <strong>export the iCal calendar</strong> of the bookings in the form of each room:</p>
+							<ol>
+								<li>Admin > Modules > Rooms > <strong>Edit</strong> <i class="fa fa-edit"></i>
+								<li>Scroll until the section <strong>"iCal Synchronization"</strong>strong> at the bottom</li>
+								<li>Click on <strong>"<i class="fa fa-clipboard"></i> Copy"</strong> or <strong>"<i class="fa fa-download"></i> Download the calendar"</strong></li>
+								<li><strong>Import this calendar</strong> or URL on your own calendar or OTA website</li>
+							</ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="templates" class="section">
+                <div class="page-header" class="section-title">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1><i class="fa fa-fw fa-file"></i> Templates</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid section-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <p>The folder /templates/ lists the templates of your website. The folder default/ is the basic default template.<br>
+                            You can choose to edit the existing template or add you own.</p>
+                            
+                            <h2>Files structure</h2>
+                            
+                            <p>The template contains 5 folders:</p>
+                            
+                            <ul>
+                                <li>
+                                    <b>common/</b>: common files for all models
+                                    <ul>
+                                        <li><b>header.php</b>: &lt;head&gt; tag with meta tags, css and js scripts... and the top of the web site (logo, navigation, flags...)</li>
+                                        <li><b>page_header.php</b>: top of all internal pages (heading 1, breadcrumb...)</li>
+                                        <li><b>footer.php</b>: &lt;footer&gt; tag with widgets and the copyrights</li>
+                                        <li><b>get_articles.php</b>: articles of a page</li>
+                                        <li><b>get_images.php</b>: images of an article (e.g. gallery)</li>
+                                        <li><b>comments.php</b>: the form to add comments and layout of the reviews about the current item (hotel, article, page...)</li>
+                                        <li><b>change_currency.php</b>: called when the user change his preferred currency</li>
+                                        <li><b>2checkout_notify.php</b>: called by 2Checkout.com after payment (database update, sending of emails)</li>
+                                        <li><b>paypal_notify.php</b>: called by PayPal after payment (database update, sending of emails)</li>
+                                        <li><b>get_rooms.php</b>: list of rooms (rooms.php)</li>
+                                        <li><b>get_activities.php</b>: list of activities (activities.php)</li>
+                                        <li><b>get_activity_sessions.php</b>: the sessions of the selected date in the booking activities page (booking-activities.php)</li>
+                                        <li><b>get_days_activity.php</b>: the availabilities of the calendars in the booking activities page (booking-activities.php)</li>
+                                        <li><b>get_days.php</b>: the availabilities of the calendars in the results of the booking search engine (booking.php)</li>
+                                        <li><b>search.php</b>: booking search engine</li>
+                                        <li><b>update_booking.php</b>: called when the user adds/changes extra services of the booking (details.php)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>css/</b>: stylesheets
+                                    <ul>
+                                        <li><b>layout.css</b>: basic layout (Pandao CMS)</li>
+                                        <li><b>main.css</b>: main layout of Panda Resort</li>
+                                        <li><b>custom.css</b>: your own rules to customize the basic rules or add yours</li>
+                                        <li><b>colors.css</b>: rules about colors of texts, buttons, backgrounds, border, etc (copy the content of a color file and past in colors.css)</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>images/</b>: as the name suggests... the images used by the template. Replace the following files:
+                                    <ul>
+                                        <li><b>logo.png</b></li>
+                                        <li><b>favicon.png</b></li>
+                                        <li><b>header-mail.png</b>: banner used in the emails sent</li>
+                                        <li><b>page-header.jpg</b>: header image of the internal pages</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <b>models/</b>: models files of the template.<br>The models are simply PHP files which defines the models of pages and articles.
+                                    <ul>
+                                        <li><b>home.php</b>: homepage</li>
+                                        <li><b>page.php</b>: simple page with articles (or not)</li>
+                                        <li><b>article.php</b>: a single article</li>
+                                        <li><b>blog.php</b>: blog model with articles</li>
+                                        <li><b>article-blog.php</b>: a single article from blog</li>
+                                        <li><b>gallery.php</b>: a gallery with its pictures (e.g. album)</li>
+                                        <li><b>contact.php</b>: contact form</li>
+                                        <li><b>sitemap.php</b>: sitemap</li>
+                                        <li><b>search.php</b>: search engine results</li>
+                                        <li><b>404.php</b>: custom 404 page</li>
+                                        <li><b>booking.php</b>: booking search engine results (rooms)</li>
+                                        <li><b>booking-activities.php</b>: step 2 of the booking process =&gt; activities</li>
+                                        <li><b>details.php</b>: step 3 =&gt; contact information and extra services</li>
+                                        <li><b>summary.php</b>: step 4 =&gt; summary of the booking</li>
+                                        <li><b>payment.php</b>: step 5 =&gt; payment choice (if multiple payment modes), database update, payment system call (for PayPal and 2Checkout.com)</li>
+                                        <li><b>rooms.php</b>: list of all rooms</li>
+                                        <li><b>room.php</b>: a single room</li>
+                                        <li><b>activities.php</b>: list of all activities</li>
+                                        <li><b>activity.php</b>: a single activity</li>
+                                    </ul>
+                                    <div class="alert alert-info">
+                                        <i class="fa fa-fw fa-info"></i> Create your own models (php file in the folder "models") and bind a page to this model in the admin panel:<br>
+                                        Admin &gt; Modules &gt; Pages &gt; Add/Edit &gt; Page model / Article model
+                                    </div>
+                                </li>
+                                <li>
+                                    <b>widgets/</b>: widgets files of the template:
+                                    <ul>
+                                        <li><b>contact_informations.php</b>: name, address, phone numbers, email of the owner (displayed in the footer)</li>
+                                        <li><b>footer_form.php</b>: currencies, languages and global search engine</li>
+                                        <li><b>latest_articles.php</b>: most recent articles displayed in the footer</li>
+                                        <li><b>pages_list.php</b>: list of pages of the current page</li>
+                                    </ul>
+                                    <div class="alert alert-info">
+                                        <i class="fa fa-fw fa-info"></i> Create your own widgets (php file in the folder "widgets") and bind a widget to this file in the admin panel:<br>
+                                        Admin &gt; Modules &gt; Widgets &gt; New/Edit &gt; Type
+                                    </div>
+                                </li>
+                            </ul>
+                            
+                            <h2>Pages VS Articles</h2>
+                            
+                            <img src="images/demo-template.png" class="img-responsive">
+                            
+                            <p>There are 2 possible levels of models for each page:</p>
+                            
+                            <ul>
+                                <li><strong>page</strong> (required): defines the page model (e.g. home.php, page.php, contact.php...)</li>
+                                <li><strong>article</strong>&nbsp; (optional): defines the model of each article of this page (e.g. article.php, article-blog.php, gallery.php)</li>
+                            </ul>
+                            
+                            <table class="table table-bordered tabled-striped">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>URL example</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Example of page URL</td>
+                                        <td>http://www.mywebsite.com/my-page</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Example of article URL of "my-page"</td>
+                                        <td>http://www.mywebsite.com/my-page/my-article</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            
+                            <div class="alert alert-warning">
+                                <i class="fa fa-fw fa-warning"></i> Don't forget to define an alias (string of characters without spaces or accents displayed in the URL of the page) for your pages or articles for each language.<br>
+                                You can specify the alias in Admin > Modules > Pages (or Articles) > Edit/New > Alias.<br>
+                                E.g. http://www.mywebsite.tld/my-page (my-page is the alias of the page)
+                            </div>
+                            
+                            <h2>Add custom CSS stylesheets and JS plugins</h2>
+                            
+                            <p>
+                                <strong>Add CSS and JS files in your models</strong> at the begining of the PHP model file.<br>
+                                Example for models/page.php which needs Isotope and jQuery LazyLoader plugins:
+                            </p>
+                            
+                            <pre class="prettyprint lang-php linenums">
+/* ==============================================
+ * CSS AND JAVASCRIPT USED IN THIS MODEL
+ * ==============================================
+ */
+$stylesheets[] = array("file" => DOCBASE."js/plugins/isotope/css/style.css", "media" => "all");
+$javascripts[] = DOCBASE."js/plugins/isotope/jquery.isotope.min.js";
+$javascripts[] = DOCBASE."js/plugins/isotope/jquery.isotope.sloppy-masonry.min.js";
+
+$stylesheets[] = array("file" => DOCBASE."js/plugins/lazyloader/lazyloader.css", "media" => "all");
+$javascripts[] = DOCBASE."js/plugins/lazyloader/lazyloader.js";</pre>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="translation" class="section">
+                <div class="page-header" class="section-title">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1><i class="fa fa-fw fa-comments"></i> Translation</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid section-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <h2>Back Office</h3>
+                            <p>
+                                To translate the back office, simply change the language in > Settings > General > Admin panel language.<br>
+                                You can add translation files in /admin/includes/langs/xx.ini where xx is the code of your language.<br>
+                                Example:
+                            </p>
+                            <pre class="prettyprint lang-php linenums">
+BACK_TO_LIST=&quot;Back to list&quot;
+SAVE=&quot;Save&quot;
+SAVE_EXIT=&quot;Save and exit&quot;
+REPLICATE=&quot;Replicate&quot;
+EXPECTED_IMAGES_SIZE=&quot;Expected images size:&quot;
+RELEASE=&quot;Release&quot;
+...</pre>
+
+                            <h2>Front Office</h3>
+                            
+                            <p>
+                                To translate the front office, enable the foreign language in Admin > Settings > General > Enable foreign languages.<br>
+                                Add languages in Admin > Modules > Languages > New.<br>
+                                Edit the content for each language <b>directly in the modules</b>. When you add or edit an item, you can move between tabs, one per language.<br>
+                                You can also translate the "small texts" like notices, captions, labels... in the <b>module Texts</b> in the admin panel.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="manage-content" class="section">
+                <div class="page-header" class="section-title">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h1><i class="fa fa-fw fa-list"></i> Manage content</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid section-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            
+                            <h2>Add an item (article, page...)</h2>
+                            
+                            <ol>
+                                <li>Go to Admin > Modules > Then select the item type (for example Articles)</li>
+                                <li>Click on "New" in the top bar</li>
+                                <li>Fill in the form without missing the required fields</li>
+                                <li>Click on "Save" to register. The item is added.</li>
+                            </ol>
+                            
+                            <h2>Edit an item</h2>
+                            
+                            <ol>
+                                <li>Go to Admin > Modules > Then select the item type (for example Articles)</li>
+                                <li>Click on the icon "pen" in the column Actions in front of the element to edit</li>
+                                <li>Edit the values in the form without missing the required fields</li>
+                                <li>Click on "Save" to register. The item is modified.</li>
+                            </ol>
+                            
+                            <h2>Sort items</h2>
+                            
+                            <ol>
+                                <li>Go to Admin > Modules > Then select the item type (for example Articles)</li>
+                                <li>Click and hold down on the row of an element and move up or down towards the new location</li>
+                                <li>The order of the item is modified.</li>
+                            </ol>
+                            
+                            <h2>Add files (images, documents, videos) to an item</h2>
+                            
+                            <ol>
+                                <li>Go to Admin > Modules > Then select the item type (for example Articles)</li>
+                                <li>Click on the icon "pen" in the column Actions in front of the element to edit</li>
+                                <li>At the bottom of the form, click on the button "Choose a file"</li>
+                                <li>Select the files on your machine (10 max / upload) and click on "Open"</li>
+                                <li>The files upload automatically</li>
+                                <li>Click on "Save" after the upload completed to register. The medias are added.</li>
+                            </ol>
+                            
+                            <div class="alert alert-info">
+                                These media are used in the slideshow, in articles as images slider or in the gallery model.<br>
+                                The first image is usually used as a thumbnail of an article.<br>
+                                To add an image in the content of a page (in the middle of the text for example), use the following method.
+                            </div>
+                            
+                            <h2>Add images in the content of a page</h2>
+                            
+                            <ol>
+                                <li>Go to Admin > Modules > Medias</li>
+                                <li>Click on "New" in the top bar</li>
+                                <li>Click on the button "Choose a file"</li>
+                                <li>Select the file on your machine and click on "Open"</li>
+                                <li>The file uploads automatically</li>
+                                <li>Click on "Save" after the upload completed to register. The media is added</li>
+                                <li>Go to Admin > Modules > Pages</li>
+                                <li>Click on the icon "pen" in the column Actions in front of the element to edit</li>
+                                <li>A panel containing all the medias opens at the right side of the screen</li>
+                                <li>Drag and drop the media towards the main text area (editor)</li>
+                                <li>Make layout changes if needed</li>
+                                <li>Click on "Save" to register. The item is modified.</li>
+                            </ol>
+                            
+                            <div class="alert alert-info">
+                                These media are used in the slideshow, in articles as images slider or in the gallery model.<br>
+                                The first image is usually used as a thumbnail of an article.<br>
+                                To add an image in the content of a page (in the middle of the text for example), use the following method.
+                            </div>
+                            
+                            <h2>Add a page</h2>
+                            
+                            <ol>
+                                <li>Go to Admin > Modules > Pages</li>
+                                <li>Click on "New" in the top bar</li>
+                                <li>
+                                    Fill in the form without missing the required fields
+                                    <ul>
+                                        <li>Title is the main title (level 1 or &lt;h1&gt;) which will appear at the top of this page.</li>
+                                        <li>Subtitle will appear below (level 2 or &lt;h2&gt;).</li>
+                                        <li>Title tag is the title of the browser window. This value is not visible on the website but is very important for SEO.</li>
+                                        <li>Alias is the name of the page in lowercase with no space, no accent and no special characters. This value is displayed in the URL of the page.</li>
+                                        <li>Parent page is the page above the new page in the tree, i.e. the added page will be a subpage.</li>
+                                        <li>Page model determines the layout and type of content displayed. "Page" is the default value.</li>
+                                        <li>Article model determines the layout of the articles on this page. "Article" is the default value.</li>
+                                        <li>The "Robots" field is used by the search engines that browse the website. "Index, follow" means that the robot saves the page in its index and follows the links there. "noindex,nofollow" means "do not index and not follow", useful for pages that you don't want to appear on Google because the content is reserved or devoid of interest.</li>
+                                        <li>In the special case of the "Pages" module, the "Home" field should only be set to "yes" for the homepage.</li>
+                                    </ul>
+                                </li>
+                                <li>Click on "Save" to register. The item is added.</li>
+                            </ol>
+                            
+                            <div class="alert alert-info">
+                                Don't insert images directly in this module, they won't be displayed.<br>
+                                The images (illustrations) and PDF or other document displayed in the body of the text of the pages must be inserted in the "Medias" module. Then drag and drop from the right side panel to the "Pages" module text editor.
+                            </div>
+                            
+                            <h2>Add a menu item</h2>
+                            
+                            <ol>
+                                <li>Go to Admin > Modules > Menus</li>
+                                <li>Click on New in the top bar</li>
+                                <li>Fill in the form without missing the required fields
+                                <ul>
+                                    <li>Parent item is the parent menu, i.e the added menu will be a submenu.</li>
+                                    <li>Item type is the content type which will be displayed after clicking on the menu.</li>
+                                    <li>Item id is the ID of the article or page (according to the item type the menu will display).<br />
+                                    <u>To get the ID</u>, go to Modules > Articles or Pages (still according to the item type), it's the value of the column ID in front of the selected element</li>
+                                    <li>URL is required for the item type "URL". It's an external URL towards another website for example.</li>
+                                    <li>Main menu is the menu on the top of the website, select Yes to add the item in this menu.</li>
+                                    <li>Footer menu is the menu at the bottom, select Yes to add the item in this menu.</li>
+                                </ul>
+                                </li>
+                                <li>Clic on Save to register. The item is added.</li>
+                            </ol>
+                            
+                            <h2>Add prices / availabilities</h2>
+                            
+                            <div class="alert alert-info">
+                                When you add a room in the admin panel, you define a default price, but this price is not used to check availabilities. You need to add rates (prices) for each room in the admin panel: Admin > Modules > Rates.<br>
+                                If you don't add prices in the module Rates, the booking search result will show "No availability".
+                            </div>
+                            <ol>
+                                <li>Go to Admin > Modules > Rates</li>
+                                <li>Click on New in the top bar</li>
+                                <li>Fill in the form without missing the required fields
+                                <ul>
+                                    <li>Start and End dates defined the priod of the price.</li>
+                                    <li>Package is the type of the price (defines the min and max nights, the days of the week and the days for check in / out).</li>
+                                    <li>Price / night is the price per night for the number of people defined.</li>
+                                    <li>Num people is the number of guests included in the price (e.g. 2 if the price is for 2 persons). If equals to 0, the fields "Price / extra adult / night" and "Price / extra child /night" will be used instead of "Price / night" (usefull to define a price per person instead of per room).</li>
+                                    <li>Price / extra adult / night and Price / extra child /night define the price per guest if the number of people is greater than "Num people".</li>
+                                    <li>Fixed supplement / stay is added to the total amount of the stay.</li>
+                                    <li>Discount is the amount or the rate (%) deducted from the amount.</li>
+                                    <li>Discount type is the type of discount (rate = percentage or fixed = amount).</li>
+                                    <li>Included tax is the tax included in the displayed prices (e.g. VAT).</li>
+                                    <li>Added taxes are taxes added to the amount (e.g. Luxury tax). Important: can't be "VAT".</li>
+                                </ul>
+                                </li>
+                                <li>Clic on Save to register. The item is added.</li>
+                            </ol>
+                            <div class="alert alert-info">
+                                You can add your own package in Admin > Modules > Packages
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
